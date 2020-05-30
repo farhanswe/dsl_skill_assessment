@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <template id="portal_my_home_skill_assessment" name="Portal My Home : Skill Assessment"
+                  inherit_id="portal.portal_my_home" priority="1">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Skill Assessment</t>
+                    <t t-set="url" t-value="'/my/skill-assessment'"/>
+                    <!--                    <t t-set="count" t-value="'1'"/>-->
+                </t>
+            </xpath>
+        </template>
+        <template id="portal_my_skill_assessment" name="Skill Assessment">
+            <t t-call="portal.portal_layout">
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Skill Assessment</t>
+                </t>
+                <t t-if="not skills">
+                    <div class="alert alert-warning mt8" role="alert">
+                        There are no Skill Assessment.
+                    </div>
+                </t>
+                <t>
+                    <t t-call="portal.portal_table">
+                        <t t-if="skills">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Sn</th>
+                                    <th>Exam Name</th>
+                                    <th>Exam Type</th>
+                                    <th>Total Mark</th>
+                                    <th>Mark</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="skills" t-as="skill">
+                                    <tr>
+                                        <td class="text-center">
+                                            <span t-esc="skill['sn']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="skill['exam_name']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="skill['exam_type']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="skill['total_mark']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="skill['mark']"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="skill['result']"/>
+                                        </td>
+                                    </tr>
+                                </t>
+
+                            </tbody>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
