@@ -37,22 +37,22 @@
                                 <t t-foreach="skills" t-as="skill">
                                     <tr>
                                         <td class="text-center">
-                                            <span t-esc="skill['sn']"/>
+                                            <span t-esc="skill.sn"/>
                                         </td>
                                         <td>
-                                            <span t-esc="skill['exam_name']"/>
+                                            <span t-esc="skill.exam_name"/>
                                         </td>
                                         <td>
-                                            <span t-esc="skill['exam_type']"/>
+                                            <span t-esc="skill.exam_type"/>
                                         </td>
                                         <td>
-                                            <span t-esc="skill['total_mark']"/>
+                                            <span t-esc="skill.total_mark"/>
                                         </td>
                                         <td>
-                                            <span t-esc="skill['mark']"/>
+                                            <span t-esc="skill.mark"/>
                                         </td>
                                         <td>
-                                            <span t-esc="skill['result']"/>
+                                            <span t-esc="skill.result"/>
                                         </td>
                                     </tr>
                                 </t>
